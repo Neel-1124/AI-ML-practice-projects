@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
 data = pd.read_csv("train.csv")
@@ -30,7 +30,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 )
 
 #Model
-model = DecisionTreeClassifier()
+model = RandomForestClassifier()
 model.fit(X_train, Y_train)
 
 predictions = model.predict(X_test)
